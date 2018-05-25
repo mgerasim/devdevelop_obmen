@@ -1,0 +1,53 @@
+
+    <header class="header">
+	<div class="container-fluid">
+	    <div class="row">
+		<div class="col-2">
+		    <div class="logo">
+			<a href="">
+			    Obmen
+			</a>
+		    </div>
+		</div>
+		<div class="col-10 justify-end align-center">
+		    <nav class="nav header-nav">
+			<ul>
+			    <li><a href="">О сервисе</a></li>
+			    <li><a href="">Начать пользоваться</a></li>
+			    <li><a href="">Вход</a></li>
+			</ul>
+		    </nav>
+		</div>
+	    </div>
+	</div>
+	<div class="container">
+	    <div class="header-title">
+		<h1>Obmen - Сервис мониторинга и сравнения стоимости монет в парах с BTC на всех крупных биржах криптовалют</h1>
+	    </div>
+	</div>
+	<div class="pair">
+	    <div class="container">
+		<div class="row">
+		    <div class="col"></div>
+		    <div class="col-11 align-center">
+			<div class="text">Выберите пару</div>
+
+<%= form_tag({}, {:method => :post} ) do %>
+			<div class="chooser align-center">
+			    <span>BTC /</span>
+ 
+		    <%= select_tag "currency", options_from_collection_for_select(@cryptocurrencies, "id", "currency", @current.id) %>
+			    
+				<button type="submit" class="btn">Рассчитать</button>
+
+			</div>
+
+<% end %>
+
+		    </div>
+		    <div class="col"></div>
+		</div>
+
+	    </div>
+	</div>
+    </header>

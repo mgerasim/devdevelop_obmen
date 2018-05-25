@@ -1,190 +1,56 @@
-<div class="card text-white text-center" style="width: 100%;">
-<div class="card-header text-right" style="margin-bottom: -140px; z-index: 1;">
-    
-    
-    <ul class="nav nav-pills card-header-pills ml-auto navbar-overlay navbar-inverse">
-     <li class="nav-item">
-        <a class="nav-link active" style="background-color: transparent;" href="#"><h5>OBMEN</h5></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" style="background-color: transparent;" href="#">О сервисе</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" style="background-color: transparent;" href="#">Начать пользоваться</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" style="background-color: transparent;" href="#">Вход</a>
-      </li>
-    </ul>
-  </div>
+<%= render 'welcome/header' %>
+<div class="section section-blue">
+		<div class="container">
+			<div class="row">
+				<div class="col-4 item">
+					<img src="<%= asset_url("card01.png") %>" alt="Только проверенные данные из самых популярных бирж в режиме реального времени">
+					<div class="item-title">
+						Надежно
+					</div>
+					<p>
+						Только провереные данные из самых популярных бирж в режиме реального времени
+					</p>
+				</div>
+				<div class="col-4 item">
+					<img src="<%= asset_url("card02.png") %>" alt="Получайте данные с любых устройств в любое время где бы вы ни находились">
+					<div class="item-title">
+						Удобно
+					</div>
+					<p>
+						Получайте данные с любых устройств в любое время где бы вы ни находились
+					</p>
+				</div>
+				<div class="col-4 item">
+					<img src="<%= asset_url("card03.png") %>" alt="Сервис моментально загружает вам информацию о любой монете на данный момент">
+					<div class="item-title">
+						Быстро
+					</div>
+					<p>
+						Сервис моментально загружает вам информацию о любой монете на данный момент
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section section-table">
+		<div class="row table-heading">
+			<div class="col"></div>
+			<div class="col-2">Пара</div>
+			<div class="col-2">Цена</div>
+			<div class="col-2">Биржа</div>
+			<div class="col-2">Проценты</div>
+			<div class="col"></div>
+		</div>
 
-  <img class="card-img" src="<%= asset_url("background01.png") %>" alt="Obmen - Сервис мониторинга и сравнения стоимости монет в парах BTC на всех крупных биржах криптовалют">
 
-  <div class="card-img-overlay h-100 d-flex flex-column justify-content-end" style="padding: 0 10em 20em 10em">
-    
-	
-	    <h3 class="card-title">Obmen - Сервис мониторинга и сравнения стоимости монет в парах BTC на всех крупных биржах криптовалют</h3>
-	    
-  </div>
-  
-  
-</div>
-
-<%= form_tag({}, {:method => :post} ) do %>
-
-<div class="card" style="width: 100%;">
-    <div class="card-body">
-	
-	<div class="row">
-	
-	    <div class="col-sm-2">
-	    </div>
-	    <div class="col-sm-3">
-		<h2>Выберите пару:</h2>
-	    </div>
-	    <div class="col-sm-3">
-		<h2>
-		    BTC <%= @current %>
-		    
-		    <%= select_tag "currency", options_from_collection_for_select(@cryptocurrencies, "id", "currency", @current) %>
-		    
-		</h2>
-	    </div>
-	    <div class="col-sm-2">
+		<div class="row table-content-row">
+			<div class="col table-col"></div>
+			<div class="col-2 table-col"> BTC/<%= @current.currency %></div>
+			<div class="col-2 table-col"> <%= @current.course %></div>
+			<div class="col-2 table-col"> exmo</div>
+			<div class="col-2 table-col"> 0,74 %</div>
+			<div class="col table-col"></div>
+		</div>
 		
-		<button type="submit" class="btn btn-primary">Рассчитать</button>
-	    <div>
-	    <div class="col-sm-2">
-	    </div>
-	
 	</div>
-    
-    </div>
-</div>
-
-<% end %>
-
-<div class="card" style="width: 100%;">
-  <div class="card-body">
-    <div class="row">
-    
-    
-	<div class="col-sm-4">
-    <div class="card text-center">
-
-<div class="row">
-  <div class="col-sm-2">
-  </div>
-  <div class="col-sm-8">
-    <img class="card-img-top" src="<%= asset_url("card01.png") %>" alt="Только проверенные данные из самых популярных бирж в режиме реального времени">
-  </div>
-  <div>
-  </div>
-</div>
-
-      <div class="card-body">
-        <h2 class="card-title">НАДЕЖНО</h2>
-        <p class="card-text">Только проверенные данные из самых популярных бирж в режиме реального времени</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card text-center">
-    
-    <div class="row">
-  <div class="col-sm-2">
-  </div>
-  <div class="col-sm-8">
-    <img class="card-img-top" src="<%= asset_url("card02.png") %>" alt="Только проверенные данные из самых популярных бирж в режиме реального времени">
-  </div>
-  <div>
-  </div>
-</div>
-
-    
-      <div class="card-body h-100 d-flex flex-column justify-content-end">
-        <h2 class="card-title">УДОБНО</h2>
-        <p class="card-text">Получайте данные с любых устройств в любое время где бы вы ни находились</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-sm-4">
-    <div class="card text-center">
-
-<div class="row">
-  <div class="col-sm-2">
-  </div>
-  <div class="col-sm-8">
-    <img class="card-img-top" src="<%= asset_url("card03.png") %>" alt="Только проверенные данные из самых популярных бирж в режиме реального времени">
-  </div>
-  <div>
-  </div>
-</div>
-
-
-
-
-      <div class="card-body">
-        <h2 class="card-title">БЫСТРО</h2>
-        <p class="card-text">Сервис моментально загружает вам информацию о любой монете на данный момент</p>
-      </div>
-    </div>
-  </div>
-  
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class="card" style="width: 100%;">
-    <div class="card-body">
-	
-	<div class="row">
-	
-	    <div class="col-sm-2">
-	    </div>
-	    <div class="col-sm-8">
-		<table class="table table-bordered">
-		    <thead>
-			<tr>
-			    <th>ПАРА</th>
-			    <th>ЦЕНА</th>
-			    <th>БИРЖА</th>
-			    <th>ПРОЦЕНТЫ</th>
-			</tr>
-		    </thead>
-		    <tbody>
-			<tr>
-			    <td>BTC/<%= Cryptocurrency.find(@current).currency %></td>
-			    <td><%= Cryptocurrency.find(@current).course %></td>
-			    <td>Exmo</td>
-			    <td></td>
-			</tr>
-		    </tbody>
-		</table>
-	    </div>
-	    <div class="col-sm-2">
-	    </div>
-	
-	</div>
-    
-    </div>
-</div>
-
-
-
-
-<div class="card" style="width: 100%;">
-  <img class="card-img-top" src="<%= asset_url("background02.png") %>" alt="Card image cap">
-  <div class="card-body">
-    <div class="card-img-overlay">
-    
-    
-    
-  </div>
-  </div>
-</div>
-
+<%= render 'welcome/footer' %>
