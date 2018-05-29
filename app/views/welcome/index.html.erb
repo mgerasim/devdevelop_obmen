@@ -43,6 +43,7 @@
 		</div>
 
 
+<% if @current != nil %>
 		<% Burse.all.each do | e | %>
 			<div class="row table-content-row">
 				<div class="col table-col"></div>
@@ -53,6 +54,7 @@
 				<div class="col table-col"></div>
 			</div>
 		<% end %>
-		
+<% end %>
+
 	</div>
 <%= render 'welcome/footer' %>

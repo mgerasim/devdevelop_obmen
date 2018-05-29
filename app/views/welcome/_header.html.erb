@@ -32,6 +32,7 @@
 		    <div class="col-11 align-center">
 			<div class="text">Выберите пару</div>
 
+<% if @current != nil %>
 <%= form_tag({}, {:method => :post} ) do %>
 			<div class="chooser align-center">
 			    <span>BTC /</span>
@@ -43,7 +44,7 @@
 			</div>
 
 <% end %>
-
+<% end %>
 		    </div>
 		    <div class="col"></div>
 		</div>
