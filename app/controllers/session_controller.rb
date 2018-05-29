@@ -15,7 +15,10 @@ class SessionController < ApplicationController
             Rails.logger.error(session[:logged_in])
             Rails.logger.error(logged_in?)
             flash[:success] = "Добро пожаловать в административную часть!"
-            redirect_to courses_path
+            respond_to do |format|
+            	format.html {redirect_to courses_url}
+            end
+            
         else
     	    flash.now[:danger] = 'Не верно указан пароль' # Not quite rig
     	    render 'new'
