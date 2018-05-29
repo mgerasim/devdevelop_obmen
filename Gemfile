@@ -70,5 +70,8 @@ group :development do
     gem 'capistrano3-puma', require: false
 end
 gem 'addressable'
-
 gem 'whenever', require: false
+
+group :production do
+  gem 'mysql2'
+end
