@@ -62,3 +62,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+group :development do
+    gem 'capistrano'
+    gem 'capistrano-rbenv'
+    gem 'capistrano-rails'
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma', require: false
+end
