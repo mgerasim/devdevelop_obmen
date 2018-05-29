@@ -18,6 +18,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if logged_in? %>
+          <%= render 'layouts/header' %>
+          <%= yield %>
+    <% else %>
+          <%= yield %>
+    <% end %>
   </body>
 </html>
