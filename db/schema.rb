@@ -10,12 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_24_095921) do
+ActiveRecord::Schema.define(version: 2018_05_29_082350) do
+
+  create_table "burses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.integer "burse_id"
+    t.integer "cryptocurrency_id"
+    t.float "value"
+    t.float "diff"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "error"
+    t.index ["burse_id"], name: "index_courses_on_burse_id"
+    t.index ["cryptocurrency_id"], name: "index_courses_on_cryptocurrency_id"
+  end
 
   create_table "cryptocurrencies", force: :cascade do |t|
     t.string "currency"
     t.string "name"
-    t.float "course"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -2,7 +2,7 @@
 <div class="section section-blue">
 		<div class="container">
 			<div class="row">
-				<div class="col-4 item">
+				<div class="col-lg-4 item">
 					<img src="<%= asset_url("card01.png") %>" alt="Только проверенные данные из самых популярных бирж в режиме реального времени">
 					<div class="item-title">
 						Надежно
@@ -11,7 +11,7 @@
 						Только провереные данные из самых популярных бирж в режиме реального времени
 					</p>
 				</div>
-				<div class="col-4 item">
+				<div class="col-lg-4 item">
 					<img src="<%= asset_url("card02.png") %>" alt="Получайте данные с любых устройств в любое время где бы вы ни находились">
 					<div class="item-title">
 						Удобно
@@ -20,7 +20,7 @@
 						Получайте данные с любых устройств в любое время где бы вы ни находились
 					</p>
 				</div>
-				<div class="col-4 item">
+				<div class="col-lg-4 item">
 					<img src="<%= asset_url("card03.png") %>" alt="Сервис моментально загружает вам информацию о любой монете на данный момент">
 					<div class="item-title">
 						Быстро
@@ -43,14 +43,16 @@
 		</div>
 
 
-		<div class="row table-content-row">
-			<div class="col table-col"></div>
-			<div class="col-2 table-col"> BTC/<%= @current.currency %></div>
-			<div class="col-2 table-col"> <%= @current.course %></div>
-			<div class="col-2 table-col"> exmo</div>
-			<div class="col-2 table-col"> 0,74 %</div>
-			<div class="col table-col"></div>
-		</div>
+		<% Burse.all.each do | e | %>
+			<div class="row table-content-row">
+				<div class="col table-col"></div>
+				<div class="col-2 table-col"> BTC/<%= @current.currency %></div>
+				<div class="col-2 table-col"> <%= @current.course(e) %></div>
+				<div class="col-2 table-col"> <%= e.name %></div>
+				<div class="col-2 table-col"> <%= @current.diff(e) %></div>
+				<div class="col table-col"></div>
+			</div>
+		<% end %>
 		
 	</div>
 <%= render 'welcome/footer' %>
