@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 #
-every 1.minute do
+every :hour do
 	rake "course:run"
 end
