@@ -8,7 +8,9 @@ namespace :course do
   		when 'Bittrex'
   			puts 'select bitrex'
   			burse.run_bittrex
-
+  		when 'Poloniex'
+  			puts 'select poloniex'
+  			burse.run_poloniex
   		else
   		end
   	}

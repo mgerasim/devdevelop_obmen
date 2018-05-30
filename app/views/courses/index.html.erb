@@ -21,8 +21,8 @@
         <td><%= course.created_at %></td>
         <td><%= course.burse.name %></td>
         <td><%= course.cryptocurrency.name %></td>
-        <td><%= course.value %></td>
-        <td><%= course.diff %></td>
+        <td><%= course.value.round(6) if course.value != nil %></td>
+        <td><%= course.diff.round(6) if course.diff != nil %></td>
         <td><%= course.error %></td>
         
       </tr>

@@ -2,6 +2,35 @@ require 'net/http'
 require 'addressable/uri'
 
 class Burse < ApplicationRecord
+	def run_poloniex
+		Cryptocurrency.all.each { |e|  
+			url = "https://poloniex.com/public?command=returnTicker"
+			uri = URI.parse(url)
+		    https = Net::HTTP.new(uri.host, uri.port)
+		    https.use_ssl = true
+
+			answer = https.get(uri.request_uri).body
+			
+			hash = JSON.parse(answer)
+
+			puts hash["BTC_#{e.currency}"]["lowestAsk"]
+
+			course = Course.new
+			course.burse = self
+			course.cryptocurrency = e
+			course.value = hash["BTC_#{e.currency}"]["lowestAsk"].to_f
+			first = Course.first
+			if (first != nil)
+				if (first.diff == nil)
+					first.diff = course.value
+				end
+				course.diff = course.value - first.diff
+			end
+			course.save
+
+		}
+	end
+
 	def run_bittrex
 		Cryptocurrency.all.each { |e|  
 			puts e.currency

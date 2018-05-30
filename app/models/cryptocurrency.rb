@@ -8,7 +8,7 @@ class Cryptocurrency < ApplicationRecord
 	def diff(burse)
 		first = self.courses.where(:burse => burse).first
 		if (first != nil)
-			first.diff
+			first.diff.round(6)
 		else
 			""
 		end
@@ -16,7 +16,7 @@ class Cryptocurrency < ApplicationRecord
 	def course(burse)
 		first = self.courses.where(:burse => burse).first
 		if (first != nil)
-			first.value
+			first.value.round(6)
 		else
 			""
 		end
