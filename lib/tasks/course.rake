@@ -11,6 +11,9 @@ namespace :course do
   		when 'Poloniex'
   			puts 'select poloniex'
   			burse.run_poloniex
+  		when 'Livecoin'
+  			puts 'select Livecoin'
+  			burse.run_livecoin
   		else
   		end
   	}
