@@ -2,6 +2,36 @@ require 'net/http'
 require 'addressable/uri'
 
 class Burse < ApplicationRecord
+	def run_binance
+		Cryptocurrency.all.each { |e|  
+			url = "https://api.binance.com/api/v3/ticker/bookTicker?symbol=#{e.currency}BTC"
+			uri = URI.parse(url)
+		    https = Net::HTTP.new(uri.host, uri.port)
+		    https.use_ssl = true
+
+			answer = https.get(uri.request_uri).body
+			
+			hash = JSON.parse(answer)
+
+			puts hash["bidPrice"]
+
+			course = Course.new
+			course.burse = self
+			course.cryptocurrency = e
+			course.value = hash["bidPrice"].to_f
+			first = Course.first
+			if (first != nil)
+				if (first.diff == nil)
+					first.diff = course.value
+				end
+				course.diff = course.value - first.diff
+			end
+			course.save
+
+
+		}
+	end
+
 	def run_livecoin
 		Cryptocurrency.all.each { |e|  
 			url = "https://api.livecoin.net/exchange/ticker?currencyPair=#{e.currency}/BTC"

@@ -5,6 +5,9 @@ namespace :course do
   	Burse.all.each { |burse|  
   		puts burse.name
   		case burse.name
+  		when 'Binance'
+  			puts 'select binance'
+  			burse.run_binance
   		when 'Bittrex'
   			puts 'select bitrex'
   			burse.run_bittrex
