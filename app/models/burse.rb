@@ -2,6 +2,36 @@ require 'net/http'
 require 'addressable/uri'
 
 class Burse < ApplicationRecord
+	def run_exmo
+		Cryptocurrency.all.each { |e|  
+			url = "https://api.exmo.com/v1/order_book/?pair=#{e.currency}_BTC"
+			uri = URI.parse(url)
+		    https = Net::HTTP.new(uri.host, uri.port)
+		    https.use_ssl = true
+
+			answer = https.get(uri.request_uri).body
+			
+			hash = JSON.parse(answer)
+
+			puts hash["#{e.currency}_BTC"]["ask_top"]
+
+			course = Course.new
+			course.burse = self
+			course.cryptocurrency = e
+			course.value = hash["#{e.currency}_BTC"]["ask_top"].to_f
+			first = Course.first
+			if (first != nil)
+				if (first.diff == nil)
+					first.diff = course.value
+				end
+				course.diff = course.value - first.diff
+			end
+			course.save
+
+
+		}
+	end
+
 	def run_cryptopia
 		Cryptocurrency.all.each { |e|  
 			url = "https://www.cryptopia.co.nz/api/GetMarket/#{e.currency}_BTC"

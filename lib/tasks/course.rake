@@ -20,6 +20,9 @@ namespace :course do
       when 'Cryptopia'
         puts 'select Cryptopia'
         burse.run_cryptopia
+      when 'EXMO'
+        puts 'select EXMO'
+        burse.run_exmo
   		else
   		end
   	}
