@@ -32,7 +32,7 @@ class Burse < ApplicationRecord
 					if (first.diff == nil)
 						first.diff = course.value
 					end
-					course.diff = diff_procent(first.diff, course.value)
+					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
 				course.error = ex.message
@@ -69,7 +69,7 @@ class Burse < ApplicationRecord
 					if (first.diff == nil)
 						first.diff = course.value
 					end
-					course.diff = diff_procent(first.diff, course.value)
+					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
 				course.error = ex.message
@@ -106,7 +106,7 @@ class Burse < ApplicationRecord
 					if (first.diff == nil)
 						first.diff = course.value
 					end
-					course.diff = diff_procent(first.diff, course.value)
+					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
 				course.error = ex.message
@@ -143,7 +143,7 @@ class Burse < ApplicationRecord
 					if (first.diff == nil)
 						first.diff = course.value
 					end
-					course.diff = diff_procent(first.diff, course.value)
+					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
 				course.error = ex.message
@@ -181,7 +181,7 @@ class Burse < ApplicationRecord
 					if (first.diff == nil)
 						first.diff = course.value
 					end
-					course.diff = diff_procent(first.diff, course.value)
+					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
 				course.error = ex.message
@@ -226,7 +226,7 @@ class Burse < ApplicationRecord
 						if (first.diff == nil)
 							first.diff = course.value
 						end
-						course.diff = diff_procent(first.diff, course.value)
+						course.diff = diff_procent(first.value, course.value)
 					end
 					course.save
 				else
