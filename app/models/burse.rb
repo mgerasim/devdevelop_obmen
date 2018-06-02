@@ -26,12 +26,14 @@ class Burse < ApplicationRecord
 				course.burse = self
 				course.cryptocurrency = e
 				course.value = hash["#{e.currency}_BTC"]["ask_top"].to_f
-				first = Course.first
+				first = Course.where(:burse => self, :cryptocurrency => e).first
 				course.diff = 0
 				if (first != nil)
 					if (first.diff == nil)
 						first.diff = course.value
 					end
+					puts "a = #{first.value}"
+					puts "b = #{course.value}"
 					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
@@ -63,12 +65,14 @@ class Burse < ApplicationRecord
 				course.burse = self
 				course.cryptocurrency = e
 				course.value = hash["Data"]["BidPrice"].to_f
-				first = Course.first
+				first = Course.where(:burse => self, :cryptocurrency => e).first
 				course.diff = 0
 				if (first != nil)
 					if (first.diff == nil)
 						first.diff = course.value
 					end
+					puts "a = #{first.value}"
+					puts "b = #{course.value}"
 					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
@@ -101,11 +105,13 @@ class Burse < ApplicationRecord
 				course.cryptocurrency = e
 				course.value = hash["bidPrice"].to_f
 				course.diff = 0
-				first = Course.first
+				first = Course.where(:burse => self, :cryptocurrency => e).first
 				if (first != nil)
 					if (first.diff == nil)
 						first.diff = course.value
 					end
+					puts "a = #{first.value}"
+					puts "b = #{course.value}"
 					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
@@ -136,13 +142,18 @@ class Burse < ApplicationRecord
 
 				course.burse = self
 				course.cryptocurrency = e
+
+				raise hash["errorMessage"] if (hash["success"] == false) 
+
 				course.value = hash["best_bid"].to_f
-				first = Course.first
+				first = Course.where(:burse => self, :cryptocurrency => e).first
 				course.diff = 0
 				if (first != nil)
 					if (first.diff == nil)
 						first.diff = course.value
 					end
+					puts "a = #{first.value}"
+					puts "b = #{course.value}"
 					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
@@ -175,12 +186,15 @@ class Burse < ApplicationRecord
 				course.burse = self
 				course.cryptocurrency = e
 				course.value = hash["BTC_#{e.currency}"]["lowestAsk"].to_f
-				first = Course.first
+				
+				first = Course.where(:burse => self, :cryptocurrency => e).first
 				course.diff = 0
 				if (first != nil)
 					if (first.diff == nil)
 						first.diff = course.value
 					end
+					puts "a = #{first.value}"
+					puts "b = #{course.value}"
 					course.diff = diff_procent(first.value, course.value)
 				end
 			rescue => ex
@@ -220,15 +234,17 @@ class Burse < ApplicationRecord
 					course.cryptocurrency = e
 					puts hash["result"]['Ask']
 					course.value = hash["result"]['Ask'].to_f
-					first = Course.first
+					
+					first = Course.where(:burse => self, :cryptocurrency => e).first
 					course.diff = 0
 				if (first != nil)
 						if (first.diff == nil)
 							first.diff = course.value
 						end
+						puts "a = #{first.value}"
+						puts "b = #{course.value}"
 						course.diff = diff_procent(first.value, course.value)
 					end
-					course.save
 				else
 
 					course = Course.new
