@@ -1,22 +1,37 @@
-<% provide(:title, "Авторизация") %>
+<div class="container">
+	<% provide(:title, "Авторизация") %>
 
-<% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-              <% end %>
-              
+	<% flash.each do |message_type, message| %>
+	        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+	              <% end %>
+	              
 
-<h1>Авторизация</h1>
+	<div class="row text-center">
+		<div class="col-sn-12">
+			<h1 class="text-center">Авторизация</h1>
+		</div>
+	</div>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
+<br>
+<br>
+	    <%= form_for(:session, url: login_path) do |f| %>
+	    		<div class="row text-center">
 
-      <%= f.label "Пароль доступа" %>
-      <%= f.password_field :password, class: 'form-control' %>
+				      <%= f.label "Пароль доступа" %>
+				 </div>
 
-      <%= f.submit "Авторизация", class: "btn btn-primary" %>
-    <% end %>
+				 	<div class="row text-center">
 
-   
-  </div>
+					      <%= f.password_field :password, class: 'form-control' %>
+
+					</div>
+					<br>
+					<br>
+
+					<div class="row text-center">
+
+					      <%= f.submit "Авторизация", class: "btn btn-primary" %>
+					</div>
+	    <% end %>
+
 </div>
