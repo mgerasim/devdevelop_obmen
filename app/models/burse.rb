@@ -24,6 +24,7 @@ class Burse < ApplicationRecord
 			course.cryptocurrency = e
 			course.value = hash["#{e.currency}_BTC"]["ask_top"].to_f
 			first = Course.first
+			course.diff = 0
 			if (first != nil)
 				if (first.diff == nil)
 					first.diff = course.value
@@ -54,6 +55,7 @@ class Burse < ApplicationRecord
 			course.cryptocurrency = e
 			course.value = hash["Data"]["BidPrice"].to_f
 			first = Course.first
+			course.diff = 0
 			if (first != nil)
 				if (first.diff == nil)
 					first.diff = course.value
@@ -83,6 +85,7 @@ class Burse < ApplicationRecord
 			course.burse = self
 			course.cryptocurrency = e
 			course.value = hash["bidPrice"].to_f
+			course.diff = 0
 			first = Course.first
 			if (first != nil)
 				if (first.diff == nil)
@@ -114,6 +117,7 @@ class Burse < ApplicationRecord
 			course.cryptocurrency = e
 			course.value = hash["best_bid"].to_f
 			first = Course.first
+			course.diff = 0
 			if (first != nil)
 				if (first.diff == nil)
 					first.diff = course.value
@@ -143,6 +147,7 @@ class Burse < ApplicationRecord
 			course.cryptocurrency = e
 			course.value = hash["BTC_#{e.currency}"]["lowestAsk"].to_f
 			first = Course.first
+			course.diff = 0
 			if (first != nil)
 				if (first.diff == nil)
 					first.diff = course.value
@@ -180,7 +185,8 @@ class Burse < ApplicationRecord
 				puts hash["result"]['Ask']
 				course.value = hash["result"]['Ask'].to_f
 				first = Course.first
-				if (first != nil)
+				course.diff = 0
+			if (first != nil)
 					if (first.diff == nil)
 						first.diff = course.value
 					end
