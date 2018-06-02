@@ -2,6 +2,10 @@ require 'net/http'
 require 'addressable/uri'
 
 class Burse < ApplicationRecord
+	def diff_procent(a, b)
+		(a - b) / ((a + b) / 2.0) * 100.0
+	end
+
 	def run_exmo
 		Cryptocurrency.all.each { |e|  
 			url = "https://api.exmo.com/v1/order_book/?pair=#{e.currency}_BTC"
@@ -24,7 +28,7 @@ class Burse < ApplicationRecord
 				if (first.diff == nil)
 					first.diff = course.value
 				end
-				course.diff = course.value - first.diff
+				course.diff = diff_procent(first.diff, course.value)
 			end
 			course.save
 
@@ -54,7 +58,7 @@ class Burse < ApplicationRecord
 				if (first.diff == nil)
 					first.diff = course.value
 				end
-				course.diff = course.value - first.diff
+				course.diff = diff_procent(first.diff, course.value)
 			end
 			course.save
 
@@ -84,7 +88,7 @@ class Burse < ApplicationRecord
 				if (first.diff == nil)
 					first.diff = course.value
 				end
-				course.diff = course.value - first.diff
+				course.diff = diff_procent(first.diff, course.value)
 			end
 			course.save
 
@@ -114,7 +118,7 @@ class Burse < ApplicationRecord
 				if (first.diff == nil)
 					first.diff = course.value
 				end
-				course.diff = course.value - first.diff
+				course.diff = diff_procent(first.diff, course.value)
 			end
 			course.save
 
@@ -143,7 +147,7 @@ class Burse < ApplicationRecord
 				if (first.diff == nil)
 					first.diff = course.value
 				end
-				course.diff = course.value - first.diff
+				course.diff = diff_procent(first.diff, course.value)
 			end
 			course.save
 
@@ -180,7 +184,7 @@ class Burse < ApplicationRecord
 					if (first.diff == nil)
 						first.diff = course.value
 					end
-					course.diff = course.value - first.diff
+					course.diff = diff_procent(first.diff, course.value)
 				end
 				course.save
 			else
@@ -193,13 +197,6 @@ class Burse < ApplicationRecord
 
 				course.save
 			end
-
-			#course = 1.0
-			#if (hash["BTC_#{self.currency}"] != nil) 
-		    #    	course = hash["BTC_#{self.currency}"]["bid_top"]
-		    #end
-		   #              
-		#	self.update_column(:course, course)
 
 		}
 	end
