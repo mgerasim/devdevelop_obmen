@@ -2,6 +2,8 @@ require 'net/http'
 require 'addressable/uri'
 
 class Burse < ApplicationRecord
+	has_many :courses
+	
 	def diff_procent(a, b)
 		(a - b) / ((a + b) / 2.0) * 100.0
 	end
