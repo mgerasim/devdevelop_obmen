@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
     	@current = Cryptocurrency.find(params[:currency])
     end
 
-    @burses = Burse.includes(:courses).where(courses: {cryptocurrency: @current}).order('"courses"."value" ASC')
+    @burses = Burse.includes(:courses).where(courses: {cryptocurrency: @current})
 
   end
 end
