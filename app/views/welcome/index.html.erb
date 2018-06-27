@@ -1,3 +1,152 @@
+
+	  <div class="container-fluid fon-banner">
+	  	<div class="row">
+		  <div class="container">
+			<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		<div ><h1 class="brend">OBMEN</h1></div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" id='b1' onmouseover='bt1()'>О сервисе</a></li>
+		  <li><a href="#" id='b2' onmouseover='bt2()'>Начать пользоваться</a></li>
+		  <li><a href="#" id='b3' onmouseover='bt3()'>Вход</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+			  <div class="banner-text-top">
+				  <p class="banner-text"><b>Obmen - Сервис мониторинга и сравнения стоимости монет в парах c BTC на всех крупных биржах криптовалют</b></p>
+			  </div>
+			</div>
+			<div class="container-fluid btb-banner">
+				<div class="container">
+			  <div class="row">
+				  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+					  <h2 class="text-btb">Выберите пару</h2>
+				  	</div>
+
+				  	<% if @current != nil %>
+<%= form_tag({}, {:method => :post} ) do %>
+			<div class="chooser align-center">
+			    <span>BTC /</span>
+ 
+		    <%= select_tag "currency", options_from_collection_for_select(@cryptocurrencies, "id", "currency", @current.id) %>
+			    
+				<button type="submit" class="btn">Рассчитать</button>
+
+			</div>
+
+<% end %>
+<% end %>
+
+				  </div>
+				</div>
+			  </div>
+		  	</div>
+	  </div>
+	  
+	  <div class="container-fluid fon-about">
+	  	<div class="row">
+		  	<div class="container top">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<img class="img-ab" src="<%= asset_url("card01.png") %>" alt="">
+					<h2 class="text-ab"><b>НАДЕЖНО</b></h2>
+				<p class="text-ab-1">Только провереные данные из самых популярных бирж в режиме реального времени</p>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<img class="img-ab" src="<%= asset_url("card02.png") %>" alt="">
+						<h2 class="text-ab"><b>УДОБНО</b></h2>
+				<p class="text-ab-1">Получайте данные с любых устройств в любое время где бы вы ни находились</p>					
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<img class="img-ab" src="<%= asset_url("card03.png") %>" alt="">
+					<h2 class="text-ab"><b>БЫСТРО</b></h2>
+				<p class="text-ab-1-1">Сервис моментально загружает вам информацию о любой монете на данный момент</p>
+				</div>
+			</div>
+		  </div>
+	  </div>
+	  
+	  <div class="container">
+	  	<div class="row">
+		  	<table class="table table-hover otstyp" border="1" width="70%" cellpadding="5">
+   <tr class="zagolovok">
+    		<th class="text-zag">ПАРА</th>
+    		<th class="text-zag">ЦЕНА</th>
+	   		<th class="text-zag">БИРЖА</th>
+   </tr>
+			
+
+<% if @current != nil %>
+		<% @burses.each do | e | %>
+			<tr>
+				<td class="text-table"> BTC/<%= @current.currency %></div>
+				<td class="text-table"> <%= @current.course(e) %></div>
+				<td class="text-table"> <%= e.name %></div>
+			</tr>
+		<% end %>
+<% end %>	
+				
+ </table>
+		  </div>
+	  </div>
+	  
+	  <div class="container-fluid fon-podval">
+	  	<div class="row">
+			<div class="container otstyp-1">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="">
+				<a href="#">
+					<h1 class="text-podval">О нас</h1>
+				</a>
+			</div>
+			<div class="">
+				<a href="#">
+					<h1 class="text-podval">Начать пользоваться</h1>
+				</a>
+			</div>
+			<div class="">
+				<a href="#">
+					<h1 class="text-podval">Подписаться</h1>
+				</a>
+			</div>
+			<div class="">
+				<a href="#">
+					<h1 class="text-podval">Как это работает</h1>
+				</a>
+			</div>
+					</div>
+					<div class="col-lg-1 col-lg-offset-3 col-md-6 col-sm-12 col-xs-12">
+				<div>
+					<p class="text-podval-1"><b>89116544552</b></p>
+					<p class="text-podval-1"><b>obmen@gmail.com</b></p>
+				</div>
+					</div>
+		  </div>
+				<div class="linkimg">
+				<a href=""><img class="linkimg-1" src="img/a1.png" alt=""></a>
+				<a href=""><img class="linkimg-1" src="img/a2.png" alt=""></a>
+				<a href=""><img class="linkimg-1" src="img/a3.png" alt=""></a>
+				<a href=""><img class="linkimg-1" src="img/a4.png" alt=""></a>
+				<a href=""><img class="linkimg-1" src="img/a5.png" alt=""></a>
+			</div>
+			</div>
+		  </div>
+	  </div>
+
+
+<!--
 <%= render 'welcome/header' %>
 <div class="section section-blue">
 		<div class="container">
@@ -58,3 +207,4 @@
 
 	</div>
 <%= render 'welcome/footer' %>
+-->

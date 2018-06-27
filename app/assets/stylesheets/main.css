@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+li {
+list-style-type: none; /* Убираем маркеры */
+}
+body{
+	font-family: 'Raleway', sans-serif;
+}
+.fon-banner{
+	background-image: asset-data-url("header-bg.jpg");
+	height: 1190px;
+}
+.brend{
+	font-size: 20px;
+	color: white;
+}
+.banner-text-top{
+	text-align: center;
+}
+.banner-text{
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	font-size: 27px;
+	margin-top: 500px;
+}
+.btb-banner{
+    height: auto;
+    background-color: #072f59;
+	margin-top: 300px;
+}
+button#cb1 {}
+
+button#cb1 {
+    width: 128px;
+    height: 39px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    position: absolute;
+    top: 5px;
+    cursor: pointer;
+    left: 80px;
+    color: #01aeff;
+    font-size: 32px;
+    background: asset-data-url("select-arrow.png");
+    background-position-x: 90px;
+    background-position-y: 10px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+	margin-top: 40px;
+	margin-left: 30px;
+}
+.buttonC button {
+    width: 230px;
+    height: 39px;
+    background: #01aeff;
+    border: 1px solid #01aeff;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    font-size: 20px;
+	margin-top: 43px;
+}
+.text-btb{
+	color: white;
+	margin-top: 50px;
+}
+.text-btb-1{
+	color: #01aeff;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.fon-about{
+	background-color: #eef7fe;
+	height: auto;
+}
+.top{
+	text-align: center;
+}
+.img-ab{
+	width: 60%;
+	margin-top: 100px;
+}
+.text-ab{
+	color: #072f59;
+	font-family: 'Raleway', sans-serif;
+}
+.text-ab-1{
+	color: #072f59;
+	font-family: 'Raleway', sans-serif;
+}
+.zagolovok{
+	background-color: #072f59;
+}
+.text-zag{
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	padding: 20px;
+	font-family: 'Raleway', sans-serif;
+}
+.text-table{
+	text-align: center;
+	color: #072f59;
+	font-size: 30px;
+	padding: 20px;
+	
+}
+.otstyp{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.fon-podval{
+	background-image: asset-data-url("footer-bg.jpg");
+	height: auto;
+}
+.text-podval{
+	color: white;
+	font-size: 20px;
+}
+.otstyp-1{
+	margin-top: 50px;
+}
+.text-podval-1{
+	color: #007cff;
+	font-size: 20px;
+}
+.linkimg{
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+.register {
+    position: relative;
+    z-index: 2;
+}
+
+.blockR {
+    height: 530px;
+	width: 96%;
+    background-color: #d9d9d98f;
+    border-radius: 10px;
+    margin-top: 290px;
+    box-sizing: border-box;
+    padding-top: 120px;
+	margin-right: 100px;
+}
+.name input[type="text"] {
+    width: 1000px;
+    margin-left: 48px;
+    height: 100px;
+    border: #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.name {
+    margin-bottom: 50px;
+}
+
+.password input[type="text"] {
+    width: 1000px;
+    height: 100px;
+    margin-left: 48px;
+    border: #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.butR input[type="submit"] {
+    width: 700px;
+    height: 70px;
+    margin-left: 195px;
+    margin-top: 60px;
+    border-radius: 20px;
+    border: 0px;
+    font-family: calibri;
+    font-size: 32px;
+    color: #fff;
+    background: linear-gradient(to top, #1261a2, #268bcd);
+	cursor:pointer;
+}
+.obm{
+	font-size: 35px;
+	color: #0b5192;;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-family: 'Raleway', sans-serif;
+}
+.block{
+	height: 300px;
+	width: 272px;
+	box-shadow: 0 0 33px #00000082;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-right: 20px;
+}
+.tar{
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	color: #0c2545;
+	margin-top: 50px;
+}
+.naz-tarifa{
+	color: #01aeff;
+    font-size: 22px;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+}
+.cen{
+ 	color: #26292d;
+    font-size: 40px;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+}
+.gal-text{
+	font-size: 18px;
+	margin-top: 30px;
+}
+.btb-opl{
+	height: 50px;
+    width: 237px;
+    position: absolute;
+    z-index: 2;
+    top: 270px;
+    border: 0px solid;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #01aeff, #01fdb6);
+    font-size: 20px;
+    font-family: calibri;
+    color: #fff;
+    box-shadow: 0 0 18px #00000094;
+    cursor: pointer;
+}
+.registerinfo {
+	font-family: calibri;
+	font-weight: 100;
+	text-align: center;
+	color: #0c2545;
+	font-size: 26px;
+	margin-top: 50px;
+	margin-bottom: 200px;
+}
+
+
+
+@media screen and (max-width: 1200px){
+	.name input[type="text"] {
+    width: 85%;
+    margin-left: 70px;
+    height: 100px;
+    border: #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.name {
+    margin-bottom: 50px;
+}
+
+.password input[type="text"] {
+    width: 85%;
+    height: 100px;
+    margin-left: 70px;
+    border: #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.butR input[type="submit"] {
+    width: 85%;
+    height: 70px;
+    margin-left: 70px;
+    margin-top: 60px;
+    border-radius: 20px;
+    border: 0px;
+    font-family: calibri;
+    font-size: 32px;
+    color: #fff;
+    background: linear-gradient(to top, #1261a2, #268bcd);
+	cursor:pointer;
+}
+.block{
+	height: 300px;
+	width: 222px;
+	box-shadow: 0 0 33px #00000082;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-right: 20px;
+}
+.btb-opl{
+	height: 50px;
+    width: 190px;
+    position: absolute;
+    z-index: 2;
+    top: 270px;
+    border: 0px solid;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #01aeff, #01fdb6);
+    font-size: 20px;
+    font-family: calibri;
+    color: #fff;
+    box-shadow: 0 0 18px #00000094;
+    cursor: pointer;
+}
+}
+@media screen and (max-width: 993px){
+button#cb1 {}
+
+button#cb1 {
+    width: 128px;
+    height: 39px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    position: absolute;
+    top: 5px;
+    cursor: pointer;
+    left: 80px;
+    color: #01aeff;
+    font-size: 32px;
+    background: asset-data-url("select-arrow.png");
+    background-position-x: 90px;
+    background-position-y: 10px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+	margin-top: 15px;
+	margin-left: 30px;
+}
+.buttonC button {
+    width: 230px;
+    height: 39px;
+    background: #01aeff;
+    border: 1px solid #01aeff;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    font-size: 20px;
+	margin-top: 15px;
+	margin-bottom: 50px;
+}
+	.text-btb{
+	color: white;
+	margin-top: 20px;
+}
+.text-btb-1{
+	color: #01aeff;
+	margin-top: 20px;
+}
+.text-ab-1-1{
+	margin-bottom: 50px;
+}
+.block{
+	height: 300px;
+	width: 167px;
+	box-shadow: 0 0 33px #00000082;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-right: 20px;
+}
+.btb-opl{
+	height: 50px;
+    width: 135px;
+    position: absolute;
+    z-index: 2;
+    top: 270px;
+    border: 0px solid;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #01aeff, #01fdb6);
+    font-size: 20px;
+    font-family: calibri;
+    color: #fff;
+    box-shadow: 0 0 18px #00000094;
+    cursor: pointer;
+}
+}
+
+
+
+@media screen and (max-width: 767px){
+	button#cb1 {}
+
+button#cb1 {
+    width: 128px;
+    height: 39px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    position: absolute;
+    top: 5px;
+    cursor: pointer;
+    left: 80px;
+    color: #01aeff;
+    font-size: 32px;
+    background: asset-data-url("select-arrow.png");
+    background-position-x: 90px;
+    background-position-y: 10px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+	margin-top: 5px;
+	margin-left: 30px;
+}
+.buttonC button {
+    width: 230px;
+    height: 39px;
+    background: #01aeff;
+    border: 1px solid #01aeff;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    font-size: 20px;
+	margin-top: 0px;
+}
+	.text-btb{
+	color: white;
+	margin-top: 17px;
+		font-size: 25px;
+}
+.text-btb-1{
+	color: #01aeff;
+	margin-top: 20px;
+	font-size: 25px;
+}
+.btb-banner{
+    height: auto;
+    background-color: #072f59;
+	margin-top: 100px;
+}
+.img-ab{
+	width: 60%;
+	margin-top: 30px;
+}
+.banner-text{
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	font-size: 27px;
+	margin-top: 400px;
+}
+	.text-zag{
+	color: white;
+	text-align: center;
+	font-size: 15px;
+	padding: 10px;
+	font-family: 'Raleway', sans-serif;
+}
+.text-table{
+	text-align: center;
+	color: #072f59;
+	font-size: 15px;
+	padding: 10px;
+	
+}
+.linkimg-1{
+		width: 15%;
+}
+.blockR {
+    height: 530px;
+	width: 100%;
+    background-color: #d9d9d98f;
+    border-radius: 10px;
+    margin-top: 290px;
+    box-sizing: border-box;
+    padding-top: 120px;
+	margin-right: 100px;
+}
+.name input[type="text"] {
+    width: 70%;
+    margin-left: 48px;
+    height: 60px;
+    border: #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.name {
+    margin-bottom: 50px;
+}
+
+.password input[type="text"] {
+    width: 70%;
+    height: 60px;
+    margin-left: 48px;
+    border: #fff;
+    border-radius: 10px;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.butR input[type="submit"] {
+    width: 200px;
+    height: 60px;
+    margin-left: 36px;
+    margin-top: 60px;
+    border-radius: 20px;
+    border: 0px;
+    font-family: calibri;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(to top, #1261a2, #268bcd);
+	cursor:pointer;
+}
+	.block{
+	height: 300px;
+	margin-left: 30px;
+	width: 272px;
+	box-shadow: 0 0 33px #00000082;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-right: 20px;
+}
+.tar{
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	color: #0c2545;
+	margin-top: 50px;
+}
+.naz-tarifa{
+	color: #01aeff;
+    font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+}
+.cen{
+ 	color: #26292d;
+    font-size: 30px;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+}
+.gal-text{
+	font-size: 18px;
+	margin-top: 30px;
+}
+.btb-opl{
+	height: 50px;
+    width: 237px;
+    position: absolute;
+    z-index: 2;
+    top: 270px;
+    border: 0px solid;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #01aeff, #01fdb6);
+    font-size: 20px;
+    font-family: calibri;
+    color: #fff;
+    box-shadow: 0 0 18px #00000094;
+    cursor: pointer;
+}
+}
